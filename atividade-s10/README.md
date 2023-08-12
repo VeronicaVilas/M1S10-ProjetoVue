@@ -1,4 +1,4 @@
-# M1S10-ProjetoVue
+# atividade-s10
 
 This template should help get you started developing with Vue 3 in Vite.
 
