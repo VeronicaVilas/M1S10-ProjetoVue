@@ -64,18 +64,18 @@
 
         </div>
         <div>
-            <input class="form-presentation" type="text" id="presentation" placeholder="Digite aqui sua carta de apresentação" />
+            <input class="form-presentation" type="text" id="presentation" placeholder="Digite aqui sua carta de apresentação" v-model="presentation" />
         </div>
 
         <button class="form-button" type="submit">Cadastrar</button>
 
     </form>
-
 </template>
 
 <script>
     import * as yup from 'yup'
     import { captureErrorYup } from '../../utils/captureErrorYup'
+    import axios from 'axios'
 
     export default {
         data() {
@@ -87,6 +87,7 @@
                 interest: '',
                 level: '',
                 skills: ['HTML', 'CSS3', 'Javascript', 'React','React-native', 'Node'],
+                presentation: '',
 
                 errors: {}
             }
@@ -107,6 +108,21 @@
                         },
                         { abortEarly:false }
                     )
+
+                    axios.post("http://localhost:50001/talent", {
+                        name: this.name,
+                        email: this.email,
+                        contact: this.contact,
+                        interest: this.interest,
+                        level: this.level,
+                        skills: this.skills,
+                        presentation: this.presentation
+                    })
+                    .then(() => {
+                        alert('Cadastrado com sucesso!')})
+                    .catch(() => {
+                        alert('Houve um erro ao se cadastrar')})
+
                 } catch (error) {
                     if (error instanceof yup.ValidationError) {
                         console.log(error)
@@ -116,7 +132,6 @@
                 }
             }
         },
-
         watch: {
             interest(NewValue, OldValue) {
                 if (NewValue !== OldValue) {
