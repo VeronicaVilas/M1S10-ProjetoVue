@@ -88,6 +88,7 @@
                 level: '',
                 skills: ['HTML', 'CSS3', 'Javascript', 'React','React-native', 'Node'],
                 presentation: '',
+                ability: '',
 
                 errors: {}
             }
@@ -109,14 +110,19 @@
                         { abortEarly:false }
                     )
 
-                    axios.post("http://localhost:50001/talent", {
-                        name: this.name,
-                        email: this.email,
-                        contact: this.contact,
-                        interest: this.interest,
-                        level: this.level,
-                        skills: this.skills,
-                        presentation: this.presentation
+                    axios ({
+                        url: 'http://localhost:50001/talent',
+                        method: 'POST',
+                        data: {
+                            name: this.name,
+                            email: this.email,
+                            date_birth: this.birthday,
+                            contact: this.contact,
+                            area: this.interest,
+                            level: this.level,
+                            skills: this.skills,
+                            apresentation: this.presentation
+                        }
                     })
                     .then(() => {
                         alert('Cadastrado com sucesso!')})
@@ -173,11 +179,12 @@
     border: none;
     border-radius: 10px;
     padding: 10px 100px;
-    background-color: #D9D9D9;
+    background-color: #D7CCC8;
     box-shadow: 1px 1px 1px black;
 }
 .message-erro {
     color: red;
+    font-size: 12px;
 }
 
 .form-select {
@@ -186,7 +193,7 @@
     border: none;
     border-radius: 10px;
     padding: 10px 80px;
-    background-color: #D9D9D9;
+    background-color: #D7CCC8;
     box-shadow: 1px 1px 1px black;
 }
 
@@ -196,7 +203,7 @@
     border: none;
     border-radius: 10px;
     padding: 30px 80px;
-    background-color: #D9D9D9;
+    background-color: #D7CCC8;
     box-shadow: 1px 1px 1px black;
 }
 
@@ -204,10 +211,12 @@
     width: 100%;
     margin-top: 16px;
     border: none;
-    background: linear-gradient(45deg, white, black);
-    color:white;
+    background: linear-gradient(80deg, #F48FB1, #BBDEFB);
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
+    color: black;
+    font-weight: bold;
+
 }
 </style>

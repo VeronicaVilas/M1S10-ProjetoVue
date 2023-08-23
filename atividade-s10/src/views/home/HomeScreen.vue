@@ -13,6 +13,7 @@
 .boxHome-title {
     margin: 20px auto;
     width: 60%;
+    padding: 1px 20px;
     
     text-align: left;
     font-size: 24px;

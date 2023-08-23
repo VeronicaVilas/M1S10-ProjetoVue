@@ -44,7 +44,7 @@
   top: 0;
   left: 0;
 
-  background: linear-gradient(45deg, black, white);
+  background: linear-gradient(45deg, #BBDEFB, #F48FB1);
 
   clip-path: circle(40% at right 80%);
   z-index: -1;
@@ -66,7 +66,7 @@
   padding: 5px;
   width: 33%;
 
-  background: linear-gradient(45deg, white, black);
+  background: linear-gradient(80deg, #F48FB1, #BBDEFB);
   text-decoration: none;
 }
 
