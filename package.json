@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "json-server": "^0.17.3",
-    "vue-router": "^4.2.4",
-    "yup": "^1.2.0"
-  }
-}
